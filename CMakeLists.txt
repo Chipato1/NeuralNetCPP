@@ -7,19 +7,10 @@ project( MultiPerceptron )
 # flags
 
 # files
+add_subdirectory( ./data )
 
 # include
-include_directories( ./include ./src ./libs/Logger/include ./libs/Eigen ./libs/Eigen/src)
+include_directories( ./include ./src ./libs/Logger/include usr/include/eigen3)
 
 # target
-add_executable( binary ./main.cpp ./source/Layer.cpp)
-# external libs - 3rd party libs
-# add_subdirectory( ./libs/Logger )
-# target_link_libraries( binary logger )
-
-# add_subdirectory( ./libs/Randomize )
-# target_link_libraries( binary randomize )
-
-#add_library(randomize STATIC IMPORTED)
-#set_property(TARGET randomize PROPERTY IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/libs/Randomize/librandomize.a)
-#ftarget_link_libraries( binary randomize )
+add_executable( binary ./main.cpp ./source/Affine_Layer.cpp ./source/ReLu_Layer.cpp ./source/Network.cpp ./source/Trainer.cpp ./source/Dataloader.cpp  ./source/Sigm_Layer.cpp ./source/Trainer_MD.cpp ./source/Sofm_Layer.cpp)

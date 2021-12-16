@@ -1,0 +1,1 @@
+configure_file(letter-recognition.txt ${CMAKE_CURRENT_BINARY_DIR}/letter-recognition.txt COPYONLY)
